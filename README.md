@@ -182,6 +182,10 @@ This project was developed for the [Google Chrome Built-in AI Challenge 2025](ht
 ### Important Note About Installation
 Due to Chrome Origin Trials requirements and API access restrictions, it's recommended to use the provided `.crx` file for installation to ensure all features work correctly. The extension ID is tied to specific API permissions and origin trial tokens.
 
+### Quick Access
+- **Keyboard Shortcut**: Press `Ctrl+Q` to open Chad's sidepanel
+- **Omnibox**: Type `chad` in the address bar then press `Tab` to access Chad's commands
+
 ### Installation Options
 
 #### Recommended: Using .crx File
@@ -249,7 +253,7 @@ Key points about the current state:
 ---
 
 <div align="center">
-  <img src="public/icon.png" alt="Chad Assistant Icon" width="128" height="128">
+  <img src="public/icon.png" alt="Chad Assistant Icon" width="128" height="128" align="center">
   <br>
   <em>Built for the Google Chrome Built-in AI Challenge 2025</em>
 </div>
