@@ -1,0 +1,137 @@
+.chatContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--ant-color-bg-container);
+}
+
+.chatHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border-bottom: 1px solid var(--ant-color-border);
+}
+
+.chatContent {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 12px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.thinkingContainer {
+    margin-bottom: 16px;
+}
+
+.messagesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message {
+    max-width: 85%;
+    padding: 12px;
+    border-radius: 8px;
+    word-wrap: break-word;
+}
+
+.message.user {
+    align-self: flex-end;
+    background: var(--ant-color-primary);
+    color: white;
+    margin-left: auto;
+}
+
+.message.assistant {
+    align-self: flex-start;
+    background: var(--ant-color-fill-quaternary);
+}
+
+.messageContent {
+    white-space: pre-wrap;
+}
+
+.chatFooter {
+    padding: 16px;
+    border-top: 1px solid var(--ant-color-border);
+}
+
+/* Responsive adjustments for ThoughtChain */
+:global(.ant-collapse-small) {
+    font-size: 11px;
+    max-width: 100%;
+}
+
+:global(.ant-collapse-small .ant-collapse-header) {
+    padding: 6px 12px !important;
+    font-size: 11px;
+    max-width: 100%;
+}
+
+:global(.ant-collapse-small .ant-collapse-content-box) {
+    padding: 8px 12px !important;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Make ThoughtChain items fully responsive */
+:global(.ant-thought-chain) {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: hidden !important;
+}
+
+:global(.ant-thought-chain-item) {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+:global(.ant-thought-chain-item-title) {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow: hidden !important;
+}
+
+:global(.ant-thought-chain-item-description) {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow: hidden !important;
+}
+
+:global(.ant-thought-chain-item-content) {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+:global(.ant-thought-chain-item-description pre),
+:global(.ant-thought-chain-item-description code) {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    word-break: break-word !important;
+    white-space: pre-wrap !important;
+}
+
+/* Hide any extra action buttons in ThoughtChain */
+:global(.ant-thought-chain-item-extra) {
+    display: none !important;
+}
+
+/* Ensure collapse items are responsive */
+:global(.ant-collapse-item) {
+    max-width: 100% !important;
+}
+
+:global(.ant-collapse-content) {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}

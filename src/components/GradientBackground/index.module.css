@@ -1,0 +1,10 @@
+/* Styles for the GradientBackground component.
+   The concrete gradient image is provided inline by the component via the
+   `scheme` prop so we keep this CSS as a sensible fallback. */
+.gradient {
+    width: 100%;
+    height: 100%;
+    /* Fallback gradient (matches the 'ref' scheme) */
+    background-image: linear-gradient(to bottom right, #d1e3ff, #d9fcea, #ffcfe7);
+    background-size: 400% 400%;
+}

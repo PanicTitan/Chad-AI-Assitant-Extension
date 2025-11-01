@@ -1,0 +1,47 @@
+/* Using CSS Modules, these class names will be scoped locally. */
+.wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dotPattern {
+    position: absolute;
+    inset: 0;
+    background-size: 20px 20px;
+    background-image: radial-gradient(circle, #d4d4d4 1px, transparent 1px);
+}
+
+.gradientMask {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background-color: #ffffff;
+    -webkit-mask-image: radial-gradient(ellipse at center, transparent 20%, black);
+    mask-image: radial-gradient(ellipse at center, transparent 20%, black);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contentContainer {
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Dark Mode Styles --- */
+/* The data-theme attribute is still used for theme switching */
+.wrapper[data-theme='dark'] {
+    background-color: #000000;
+}
+
+.wrapper[data-theme='dark'] .dotPattern {
+    background-image: radial-gradient(circle, #404040 1px, transparent 1px);
+}
+
+.wrapper[data-theme='dark'] .gradientMask {
+    background-color: #000000;
+}

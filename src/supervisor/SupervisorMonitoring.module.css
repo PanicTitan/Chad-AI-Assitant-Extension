@@ -1,0 +1,32 @@
+.container {
+    width: 100%;
+    padding: 8px 0;
+}
+
+.statusTag {
+    font-weight: 600;
+    font-size: 14px;
+    padding: 4px 16px;
+    border-radius: 16px;
+    border: none;
+}
+
+.statsContainer {
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.divider {
+    width: 1px;
+    height: 40px;
+}
+
+.progress {
+    margin: 0;
+}
+
+.controlButton {
+    min-width: 120px;
+    border-radius: 8px;
+    font-weight: 500;
+}

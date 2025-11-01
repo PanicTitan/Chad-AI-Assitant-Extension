@@ -1,0 +1,184 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+    justify-content: space-between;
+    height: -webkit-fill-available;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--assistant-text-color, #1f2933);
+}
+
+.textarea {
+    width: auto;
+    min-height: 80px;
+    height: auto;
+    padding: 0.75rem;
+    border: 1.5px solid var(--assistant-border-color, rgba(79, 122, 255, 0.2));
+    border-radius: 0.75rem;
+    background: var(--assistant-card-bg, rgba(255, 255, 255, 0.5));
+    color: var(--assistant-text-color, #1f2933);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: #4f7aff;
+    box-shadow: 0 0 0 3px rgba(79, 122, 255, 0.1);
+}
+
+.textarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.settingsToggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    border: none;
+    color: #4f7aff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    align-self: flex-start;
+}
+
+.settingsToggle:hover:not(:disabled) {
+    opacity: 0.8;
+}
+
+.settingsToggle:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.settingsContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--assistant-card-bg, rgba(255, 255, 255, 0.3));
+    border-radius: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.optionGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.optionLabel {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--assistant-text-color, #1f2933);
+    opacity: 0.8;
+}
+
+.radioGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.radioOption {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.75rem;
+    border: 1.5px solid var(--assistant-border-color, rgba(15, 23, 42, 0.15));
+    border-radius: 0.5rem;
+    background: var(--assistant-card-bg, rgba(255, 255, 255, 0.5));
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.radioOption:hover {
+    border-color: rgba(79, 122, 255, 0.4);
+    background: rgba(79, 122, 255, 0.05);
+}
+
+.radioOption input[type="radio"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+.radioOption input[type="radio"]:checked + span {
+    font-weight: 600;
+}
+
+.radioOption input[type="radio"]:checked {
+    accent-color: #4f7aff;
+}
+
+.radioOption input[type="radio"]:disabled {
+    cursor: not-allowed;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+}
+
+.button {
+    padding: 0.65rem 1.25rem;
+    border-radius: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.button[data-variant="primary"] {
+    background: #4f7aff;
+    color: white;
+}
+
+.button[data-variant="primary"]:hover:not(:disabled) {
+    background: #3d66e6;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 122, 255, 0.3);
+}
+
+.button[data-variant="primary"]:disabled {
+    background: rgba(79, 122, 255, 0.5);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.button[data-variant="ghost"] {
+    background: transparent;
+    color: var(--assistant-text-color, #1f2933);
+}
+
+.button[data-variant="ghost"]:hover:not(:disabled) {
+    background: var(--assistant-border-color, rgba(15, 23, 42, 0.08));
+}
+
+.button[data-variant="ghost"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

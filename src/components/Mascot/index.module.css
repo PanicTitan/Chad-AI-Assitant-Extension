@@ -1,0 +1,243 @@
+.mascot {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+
+    --robot-color-main: #f8d97b;
+    --robot-color-shadow: #d9b362;
+    --robot-color-face: #f7f6ed;
+    --robot-color-visor-highlight: #fafbfb;
+    --robot-color-outline: #232222;
+    --robot-color-eyes: #030303;
+    --robot-color-ear-inner: #2a3155;
+    --robot-color-antenna-base: #d2d3d3;
+    --robot-color-antenna-top: #f8f8f8;
+    --robot-color-earphone: #f8d97b;
+    --robot-color-forehead: #f8d97b;
+    --robot-color-eye-highlight: #ffffff;
+}
+
+.sizeSmall {
+    max-width: 120px;
+}
+
+.sizeMedium {
+    max-width: 160px;
+}
+
+.sizeBig {
+    max-width: 220px;
+}
+
+.group {
+    filter: drop-shadow(0 12px 18px rgba(15, 23, 42, 0.18));
+    transition: filter 200ms ease;
+    transform-origin: 50% 50%;
+}
+
+.mascot:hover .group {
+    filter: drop-shadow(0 18px 26px rgba(15, 23, 42, 0.22));
+}
+
+.motionFloat {
+    animation: mascotFloat 3s ease-in-out infinite;
+}
+
+.motionTilt {
+    animation: mascotTilt 4s ease-in-out infinite;
+}
+
+.motionShake {
+    animation: mascotShake 1.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+}
+
+.motionSpin {
+    animation: mascotSpin 12s linear infinite;
+}
+
+@keyframes mascotFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes mascotTilt {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(4deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes mascotShake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    15% {
+        transform: translateX(-6px);
+    }
+    30% {
+        transform: translateX(6px);
+    }
+    45% {
+        transform: translateX(-4px);
+    }
+    60% {
+        transform: translateX(4px);
+    }
+    75% {
+        transform: translateX(-2px);
+    }
+}
+
+@keyframes mascotSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.variantBlue {
+    --robot-color-main: #4a90e2;
+    --robot-color-shadow: #3a74b6;
+    --robot-color-face: #e0f2f7;
+    --robot-color-visor-highlight: #fafbfb;
+    --robot-color-outline: #1f2937;
+    --robot-color-eyes: #030303;
+    --robot-color-ear-inner: #f8d97b;
+    --robot-color-antenna-base: #d2d3d3;
+    --robot-color-antenna-top: #4a90e2;
+    --robot-color-earphone: #f8d97b;
+    --robot-color-forehead: #f8d97b;
+    --robot-color-eye-highlight: #ffffff;
+}
+
+.variantPink {
+    --robot-color-main: #f28b8b;
+    --robot-color-shadow: #d46b6b;
+    --robot-color-face: #ffeeee;
+    --robot-color-visor-highlight: #fff6f6;
+    --robot-color-outline: #3c1728;
+    --robot-color-eyes: #260d18;
+    --robot-color-ear-inner: #c084fc;
+    --robot-color-antenna-base: #d2c6de;
+    --robot-color-antenna-top: #c084fc;
+    --robot-color-earphone: #e67b7b;
+    --robot-color-forehead: #f28b8b;
+    --robot-color-eye-highlight: #ffffff;
+}
+
+.variantYellow {
+    --robot-color-main: #f8d97b;
+    --robot-color-shadow: #d9b362;
+    --robot-color-face: #f7f6ed;
+    --robot-color-visor-highlight: #fafbfb;
+    --robot-color-outline: #232222;
+    --robot-color-eyes: #030303;
+    --robot-color-ear-inner: #2a3155;
+    --robot-color-antenna-base: #d2d3d3;
+    --robot-color-antenna-top: #f8f8f8;
+    --robot-color-earphone: #f8d97b;
+    --robot-color-forehead: #f8d97b;
+    --robot-color-eye-highlight: #ffffff;
+}
+
+.mascot [data-part='face'] {
+    fill: var(--robot-color-face);
+}
+
+.mascot [data-part='contorno-geral'],
+.mascot [data-part='mouth'],
+.mascot [data-part='detail'] {
+    fill: var(--robot-color-outline);
+}
+
+.mascot [data-part='corpo-principal'],
+.mascot [data-part='left-ear-body'],
+.mascot [data-part='right-ear-body'] {
+    fill: var(--robot-color-main);
+}
+
+.mascot [data-part='forehead'] {
+    fill: var(--robot-color-forehead);
+}
+
+.mascot [data-part='eyes'] {
+    fill: var(--robot-color-eyes);
+}
+
+.mascot [data-part='face-bottom-shadow'],
+.mascot [data-part='right-phone-bottom-shadow'],
+.mascot [data-part='left-phone-bottom-shadow'] {
+    fill: var(--robot-color-shadow);
+}
+
+.mascot [data-part='outline'],
+.mascot [data-part='forehead-right-shadow'],
+.mascot [data-part='forehead-left-shadow'],
+.mascot [data-part='right-phone-shadow'],
+.mascot [data-part='left-phone-shadow'] {
+    fill: var(--robot-color-face);
+}
+
+.mascot [data-part='forehead-right-shadow'],
+.mascot [data-part='forehead-left-shadow'],
+.mascot [data-part='right-phone-shadow'],
+.mascot [data-part='left-phone-shadow'] {
+    opacity: 0.5;
+}
+
+.mascot [data-part='forehead-shadow'] {
+    fill: var(--robot-color-visor-highlight);
+    opacity: 0.7;
+}
+
+.mascot [data-part='right-phone'],
+.mascot [data-part='left-phone'] {
+    fill: var(--robot-color-earphone);
+}
+
+.mascot [data-part='right-ear'],
+.mascot [data-part='left-ear'] {
+    fill: var(--robot-color-ear-inner);
+}
+
+.mascot [data-part='antenna-base'] {
+    fill: var(--robot-color-antenna-base);
+}
+
+.mascot [data-part='antenna-top'] {
+    fill: var(--robot-color-antenna-top);
+}
+
+.mascot [data-part='right-eye-top-highlight'],
+.mascot [data-part='left-eye-top-highlight'],
+.mascot [data-part='right-eye-bottom-highlight'],
+.mascot [data-part='left-eye-bottom-highlight'],
+.mascot [data-part='antenna-highlight'] {
+    fill: var(--robot-color-eye-highlight);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .group,
+    .motionFloat,
+    .motionTilt,
+    .motionShake,
+    .motionSpin {
+        animation: none !important;
+    }
+}

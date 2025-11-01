@@ -1,0 +1,303 @@
+.container {
+    pointer-events: auto;
+    position: relative;
+}
+
+.toggleButton {
+    background: var(--assistant-card-bg, rgba(255, 255, 255, 0.75));
+    border-radius: 50%;
+    border: 1px solid var(--assistant-border-color, rgba(15, 23, 42, 0.1));
+    width: 3.75rem;
+    height: 3.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.12),
+        0 5px 15px rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    position: relative;
+}
+
+.toggleButton:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+        0 15px 40px rgba(15, 23, 42, 0.18),
+        0 8px 20px rgba(15, 23, 42, 0.12);
+    border-color: rgba(86, 140, 255, 0.3);
+    background: rgba(86, 140, 255, 0.5);
+}
+
+.toggleButton:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+.items {
+    position: absolute;
+    bottom: 4.5rem;
+    right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+}
+
+.itemButton {
+    width: -webkit-fill-available;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--assistant-border-color, rgba(15, 23, 42, 0.1));
+    
+    color: var(--assistant-text-color, #1f2933);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    box-shadow: 
+        0 10px 26px rgba(15, 23, 42, 0.1),
+        0 6px 14px rgba(15, 23, 42, 0.06);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    cursor: pointer;
+    transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+    background: var(--assistant-card-bg, rgba(255, 255, 255, 0.75));
+}
+
+.itemButton:hover {
+    transform: translateY(-2px);
+    background: rgba(86, 140, 255, 0.5);
+}
+
+.itemButton[data-active="true"] {
+    background: linear-gradient(135deg, rgba(86, 140, 255, 0.25), rgba(86, 140, 255, 0.06));
+    border-color: rgba(86, 140, 255, 0.45);
+}
+
+.itemLabel {
+    pointer-events: none;
+}
+
+.iconCircle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background: rgba(86, 140, 255, 0.16);
+    color: #1a55ff;
+    flex-shrink: 0;
+}
+
+.iconCircle[data-theme="dark"] {
+    background: rgba(86, 140, 255, 0.32);
+    color: #fff;
+}
+
+.badge {
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.12);
+    color: inherit;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.itemWrapper {
+    position: relative;
+    width: -webkit-fill-available;
+}
+
+.itemButton[data-has-config="true"] {
+    position: relative;
+}
+
+.configIndicatorFab {
+    width: 1.4rem;
+    height: 1.4rem;
+    font-size: 16px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-size: 0.7rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    pointer-events: auto;
+    background: transparent;
+    z-index: 10;
+}
+
+.itemButton[data-has-config="true"]:hover .configIndicatorFab {
+    opacity: 1;
+}
+
+.configIndicatorFab:hover {
+    transform: scale(1.15);
+}
+
+.itemButtonConfigActive {
+    background: rgba(86, 140, 255, 0.2) !important;
+    border-color: rgba(86, 140, 255, 0.5) !important;
+}
+
+.configPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--assistant-card-bg, rgba(255, 255, 255, 0.98));
+    border: 1px solid var(--assistant-border-color, rgba(15, 23, 42, 0.1));
+    border-radius: 1rem;
+    box-shadow: 
+        0 20px 50px rgba(15, 23, 42, 0.15),
+        0 10px 25px rgba(15, 23, 42, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    min-width: 20rem;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow: hidden;
+    z-index: 10010;
+}
+
+.configHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--assistant-border-color, rgba(15, 23, 42, 0.1));
+}
+
+.configHeader h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--assistant-text-color, #1f2933);
+}
+
+.configHeader button {
+    background: transparent;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    color: var(--assistant-text-color, #1f2933);
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    font-size: 1.2rem;
+}
+
+.configHeader button:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.configBody {
+    padding: 1.25rem;
+    overflow-y: auto;
+    max-height: calc(80vh - 4rem);
+}
+
+.configSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.configSection + .configSection {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--assistant-border-color, rgba(15, 23, 42, 0.1));
+}
+
+.configLabel {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--assistant-text-color, #1f2933);
+    opacity: 0.7;
+}
+
+.configOptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.configOption {
+    background: transparent;
+    border: 1px solid var(--assistant-border-color, rgba(15, 23, 42, 0.15));
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--assistant-text-color, #1f2933);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.configOption:hover {
+    background: rgba(86, 140, 255, 0.1);
+    border-color: rgba(86, 140, 255, 0.3);
+}
+
+.configOptionActive {
+    background: rgba(86, 140, 255, 0.15);
+    border-color: rgba(86, 140, 255, 0.5);
+    color: #568cff;
+}
+
+.configTextarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--assistant-border-color, rgba(15, 23, 42, 0.15));
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: var(--assistant-text-color, #1f2933);
+    background: var(--assistant-card-bg, rgba(255, 255, 255, 0.5));
+    resize: vertical;
+    min-height: 6rem;
+}
+
+.configTextarea:focus {
+    outline: none;
+    border-color: rgba(86, 140, 255, 0.5);
+    background: var(--assistant-card-bg, rgba(255, 255, 255, 0.8));
+}
+
+.configActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.configButton {
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(86, 140, 255, 0.95), rgba(86, 140, 255, 0.85));
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.configButton:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(86, 140, 255, 0.3);
+}

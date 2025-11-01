@@ -1,0 +1,159 @@
+.sidepanelContainer {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: var(--ant-color-bg-layout);
+    position: relative;
+}
+
+.toggleContainer {
+    position: absolute;
+    bottom: 25px;
+    left: 18px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: left 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggleContainer:hover {
+    background: var(--ant-color-fill-tertiary);
+}
+
+/* .tabs.expanded ~ .toggleContainer {
+    left: 152px;
+} */
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.tabs {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    width: -webkit-fill-available;
+}
+
+.tabs :global(.ant-tabs-content-holder) {
+    flex: 1;
+    overflow: hidden;
+}
+
+.tabs :global(.ant-tabs-content) {
+    height: 100%;
+}
+
+.tabs :global(.ant-tabs-tabpane) {
+    height: 100%;
+    overflow: hidden;
+    padding-left: 0px !important;
+}
+
+/* Sidebar navigation styling */
+.tabs :global(.ant-tabs-nav) {
+    margin: 0;
+    padding: 8px 8px 8px 18px;
+    width: 73px;
+    background: var(--ant-color-bg-container);
+    border-right: 1px solid var(--ant-color-border);
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+.tabs.expanded :global(.ant-tabs-nav) {
+    width: 200px;
+}
+
+.tabs :global(.ant-tabs-nav-wrap) {
+    flex: 1;
+}
+
+.tabs :global(.ant-tabs-nav-list) {
+    width: 100%;
+}
+
+/* Tab button styling */
+.tabs :global(.ant-tabs-tab) {
+    padding: 0 !important;
+    margin: 4px 0 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+.tabs :global(.ant-tabs-tab .ant-tabs-tab-btn) {
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 8px;
+    color: var(--ant-color-text-secondary);
+    /* transition: justify-content 0.6s linear, padding 0.6s linear; */
+}
+
+/* Hover effect */
+.tabs :global(.ant-tabs-tab:hover .ant-tabs-tab-btn) {
+    background: var(--ant-color-fill-tertiary);
+}
+
+/* Active tab */
+.tabs :global(.ant-tabs-tab-active .ant-tabs-tab-btn) {
+    background: var(--ant-color-primary-bg) !important;
+    color: var(--ant-color-primary) !important;
+}
+
+/* Icon and text layout */
+.tabs :global(.ant-tabs-tab-btn span) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    transition: gap 0.3s ease, font-size 0.3s ease, justify-content 0.3s ease;
+}
+
+/* Icon - always visible */
+.tabs :global(.ant-tabs-tab-btn .anticon) {
+    font-size: 20px;
+    display: inline-block !important;
+}
+
+/* Text - hide by default, show text content as empty */
+.tabs :global(.ant-tabs-tab-btn span) {
+    font-size: 0;
+    /* color: transparent; */
+}
+
+/* Keep icon size normal even when parent has font-size 0 */
+.tabs :global(.ant-tabs-tab-btn .anticon) {
+    font-size: 20px !important;
+}
+
+/* On expanded: align left, show text, add gap */
+.tabs.expanded :global(.ant-tabs-nav .ant-tabs-tab .ant-tabs-tab-btn) {
+    justify-content: flex-start;
+    padding-left: 16px;
+}
+
+.tabs.expanded :global(.ant-tabs-nav .ant-tabs-tab-btn span) {
+    font-size: 14px;
+    color: inherit;
+    gap: 12px;
+    justify-content: flex-start;
+}
+
+/* Remove default ant design ink bar */
+.tabs :global(.ant-tabs-ink-bar) {
+    display: none;
+}

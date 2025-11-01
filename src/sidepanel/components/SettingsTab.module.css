@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 16px;
+}
+
+.header {
+    margin-bottom: 24px;
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.switchRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mascotOption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mascotOption.selected {
+    border-color: var(--ant-color-primary);
+    background: var(--ant-color-primary-bg);
+}
+
+.mascotOption:hover {
+    border-color: var(--ant-color-primary);
+}
